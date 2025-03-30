@@ -10,7 +10,8 @@ const protectedRouter = require("./router/protectedRouter");
 app.use(cors());
 app.use(express.json());
 app.use("/auth", authRoutes);
-app.use("/protected", protectedRouter)
+app.use("/protected", protectedRouter);
+app.use("/users", authRoutes)
 main().then(()=> {console.log("connected to the DB")}).catch(err => console.log("Is not able to connect" ,err));
 async function main(){
     await mongoose.connect(process.env.MONGO_DB)
