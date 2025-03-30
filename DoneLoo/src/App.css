@@ -1,0 +1,36 @@
+
+body{
+    margin: 0;
+    box-sizing: border-box;
+    background-color: oklch(0.792 0.209 151.711);
+}
+h1{
+    color: oklch(0.712 0.194 13.428);
+}
+.w-full{
+    max-width: 600px;
+    margin: auto;
+}
+.bg-white{
+    padding: 10px 20px;
+    margin-top: 30px;
+}
+.head-align{
+    text-align: center;
+}
+.button-design{
+    background-color: oklch(0.792 0.209 151.711);
+    border: none;
+    color: oklch(0.712 0.194 13.428);
+    transition: 0.30s;
+}
+.button-design:hover{
+    transition: 0.30s;
+    background-color: oklch(0.627 0.194 149.214);
+}
+.button-design:active{
+    background-color: oklch(0.792 0.209 151.711);
+    border: none;
+    
+    transition: 0.15s;
+}
