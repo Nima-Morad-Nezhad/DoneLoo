@@ -34,3 +34,13 @@ h1{
     
     transition: 0.15s;
 }
+.home-nav-main{
+    background-color: #ffffff;
+    height: 60px;
+    box-shadow: 2px 2px 5px;
+}
+.nav-logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
