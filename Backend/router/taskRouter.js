@@ -1,39 +1,50 @@
+const express = require("express");
+ const router = express.Router();
+ const Task = require("../models/taskModel")
 // Create a task
-app.post('/tasks', async (req, res) => {
+router.post('/add', async (req, res) => {
     try {
-      const task = new Task(req.body);
-      const savedTask = await task.save();
-      res.json(savedTask);
+      const task =await Task.create({  title: req.body.title,
+        description: req.body.status,
+        status: req.body.status});
+     
+      // const savedTask = await task.save();
+      res.status(201).json(task);
+      console.log("Added successfully!");
     } catch (error) {
       res.status(500).json({ msg:"you could not add",error });
+      console.error("error adding task",error)
     }
   });
   // Get all tasks
-app.get('/tasks', async (req, res) => {
+router.get('/get', async (req, res) => {
     try {
       const tasks = await Task.find();
-      res.json(tasks);
+      res.status(201).json(tasks);
+          
     } catch (error) {
       res.status(500).json({msg:"you could not receive",error  });
     }
   });
   
   // Update a task
-  app.put('/tasks/:id', async (req, res) => {
+  router.put('/update/:id', async (req, res) => {
     try {
       const task = await Task.findByIdAndUpdate(req.params.id, req.body, { new: true });
-      res.json(task);
+      res.status(201).json(task);
     } catch (error) {
       res.status(500).json({msg:"you could not update",error   });
     }
   });
   
   // Delete a task
-  app.delete('/tasks/:id', async (req, res) => {
+  router.delete('/delete/:id', async (req, res) => {
     try {
       await Task.findByIdAndDelete(req.params.id);
-      res.json({ message: 'Task deleted successfully' });
+      res.status(201).json({ message: 'Task deleted successfully' });
     } catch (error) {
       res.status(500).json({msg:"you could not delete",error   });
     }
   });
+module.exports = router;
+  //"67eb36ec59a378d7ed855e40"
