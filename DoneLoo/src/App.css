@@ -44,3 +44,66 @@ h1{
     flex-direction: column;
     justify-content: center;
 }
+.input-design{
+    display: flex;
+    flex-direction: row;
+  justify-content: space-around;
+   flex-shrink: inherit;
+   padding-left: 20px;
+   padding-right: 20px;
+
+}
+.vertical{
+    padding-top: 30px;
+  
+}
+.form-input-design{
+    background-color: oklch(90.5% 0.182 98.111);
+    border-style: none;
+    border-radius: 4px;
+    box-shadow: 2px 2px 5px;
+}
+.button-design-home{
+    border: none;
+    background-color: oklch(70.4% 0.191 22.216);
+    color: white;
+    border-radius: 4px;
+    padding: 9px 25px ;
+    box-shadow: 2px 2px 5px black;
+    transition: 0.30s;
+}
+.button-design-home:hover{
+    background-color: oklch(57.7% 0.245 27.325);
+    transition: 0.30s;
+}
+.button-design-home:active{
+    background-color: oklch(44.4% 0.177 26.899);
+    transition: 0.30s;
+}
+h3{
+    text-align: center;
+    background-color:  oklch(35.9% 0.144 278.697);
+    padding-top: 7px;
+    padding-bottom: 7px;
+  color: #ffffff;
+    border-radius: 4px;
+    
+}
+.task-todo-card{
+  background-color: oklch(83.7% 0.128 66.29);
+    max-width: 300px;
+    border-radius: 4px;
+    padding: 7px 7px;
+}
+.task-home{
+    background-color:  oklch(35.9% 0.144 278.697);
+    padding: 16px 7px 16px 7px;
+    font-size: large;
+    border-radius: 4px;
+}
+hr{
+    color: white;
+}
+span{
+    color: white;
+}

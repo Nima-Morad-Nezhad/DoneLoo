@@ -5,8 +5,8 @@ const express = require("express");
 router.post('/add', async (req, res) => {
     try {
       const task =await Task.create({  title: req.body.title,
-        description: req.body.status,
-        status: req.body.status});
+        description: req.body.status
+       });
 
 
       res.status(201).json(task);
