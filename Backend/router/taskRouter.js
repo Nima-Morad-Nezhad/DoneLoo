@@ -7,8 +7,8 @@ router.post('/add', async (req, res) => {
       const task =await Task.create({  title: req.body.title,
         description: req.body.status,
         status: req.body.status});
-     
-      // const savedTask = await task.save();
+
+
       res.status(201).json(task);
       console.log("Added successfully!");
     } catch (error) {
@@ -32,6 +32,7 @@ router.get('/get', async (req, res) => {
     try {
       const task = await Task.findByIdAndUpdate(req.params.id, req.body, { new: true });
       res.status(201).json(task);
+      console.log("tast has updated!")
     } catch (error) {
       res.status(500).json({msg:"you could not update",error   });
     }
@@ -42,8 +43,9 @@ router.get('/get', async (req, res) => {
     try {
       await Task.findByIdAndDelete(req.params.id);
       res.status(201).json({ message: 'Task deleted successfully' });
+      console.log("task has deleted!")
     } catch (error) {
-      res.status(500).json({msg:"you could not delete",error   });
+      res.status(500).json({msg:"you could not delete",error });
     }
   });
 module.exports = router;
