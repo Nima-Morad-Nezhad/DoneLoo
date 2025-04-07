@@ -82,18 +82,19 @@ h1{
 }
 h3{
     text-align: center;
-    background-color:  oklch(35.9% 0.144 278.697);
+    background-color:  rgb(252, 252, 134);
     padding-top: 7px;
     padding-bottom: 7px;
-  color: #ffffff;
+  color:  oklch(0.712 0.194 13.428);
     border-radius: 4px;
     
 }
 .task-todo-card{
   background-color: oklch(83.7% 0.128 66.29);
-    max-width: 300px;
+    min-width: 300px;
     border-radius: 4px;
     padding: 7px 7px;
+    min-height: 200px;
 }
 .task-home{
     background-color:  oklch(35.9% 0.144 278.697);
