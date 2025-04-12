@@ -2,11 +2,26 @@
 body{
     margin: 0;
     box-sizing: border-box;
-    background-color: oklch(0.792 0.209 151.711);
+    background-image: url("./assets/background.jpg");
+   background-size: cover ;
+   background-repeat: no-repeat;
+   background-position: center;
+   height: 90vh;
+   width: 99vw;
+ 
 }
 h1{
     color: oklch(0.712 0.194 13.428);
+    text-align: center;
+ font-size: 100px;
+
 }
+.logo{
+    position: fixed;
+   bottom: 200px;
+  left: 39%;
+}
+
 .w-full{
     max-width: 600px;
     margin: auto;
@@ -34,20 +49,15 @@ h1{
     
     transition: 0.15s;
 }
-.home-nav-main{
-    background-color: #ffffff;
-    height: 60px;
-    box-shadow: 2px 2px 5px;
-}
+
 .nav-logo{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+   margin-top: 50px;
+   margin-bottom: 30px;
 }
 .input-design{
     display: flex;
     flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
    flex-shrink: inherit;
    padding-left: 20px;
    padding-right: 20px;
@@ -62,6 +72,12 @@ h1{
     border-style: none;
     border-radius: 4px;
     box-shadow: 2px 2px 5px;
+    opacity: 0.2;
+    transition: 0.5s;
+}
+.form-input-design:focus{
+    transition: 0.5s;
+    opacity: 1;
 }
 .button-design-home{
     border: none;
@@ -90,12 +106,14 @@ h3{
     
 }
 .task-todo-card{
-  background-color: oklch(83.7% 0.128 66.29);
+  background-color: oklch(83.7% 0.128 66.29, opacity(0.1));
     min-width: 300px;
     border-radius: 4px;
     padding: 7px 7px;
     min-height: 200px;
+
 }
+
 .task-home{
     background-color:  oklch(35.9% 0.144 278.697);
     padding: 16px 7px 16px 7px;
@@ -108,3 +126,18 @@ hr{
 span{
     color: white;
 }
+label{
+    color: #ffffff;
+}
+.home-nav-link{
+    text-decoration: none;
+color: #ffffff;
+font-weight: bold;
+
+}
+.home-nav-main{
+    
+   font-size: 15px;
+    float: right;
+}
+

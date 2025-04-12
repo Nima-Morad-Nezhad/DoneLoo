@@ -37,7 +37,7 @@ const Login = () => {
 	<>
 	<div className="w-full max-w-xs">
   <form onSubmit={handleLogin} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-	<h1>DoneLoo</h1>
+	
   <h2 className="head-align">Login</h2>
   {error && <p className="alert alert-danger">{error}</p>}
 	<div className="mb-4">
@@ -69,9 +69,10 @@ const Login = () => {
 	
     </div>
   </form>
-  <p className="text-center text-gray-500 text-xs">
+  <p className="text-center text-light  text-xs">
     &copy; copy right Nima!
   </p>
+  <h1 className="logo">DoneLoo</h1>
 </div>
 	</>
 	) 

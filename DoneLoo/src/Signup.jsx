@@ -33,7 +33,7 @@ const Signup = () => {
 
 <div className="w-full max-w-xs">
   <form onSubmit={handleRegister} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-	<h1>DoneLoo</h1>
+	
   <h2 className="head-align">Sign Up</h2>
   {error && <p className="alert alert-danger">{error}</p>}
     <div className="mb-4">
@@ -77,7 +77,7 @@ const Signup = () => {
     &copy; copy right Nima!
   </p>
 </div>
-
+<h1 className="logo">DoneLoo</h1>
 </>
 	) 
 
