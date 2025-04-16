@@ -19,7 +19,7 @@ const Signup = () => {
         password,
       });
       localStorage.setItem("authToken", data.token);
-      navigate("/login");
+      navigate("/home");
       console.log('registered successfully!')
     } catch (err) {
       setError(err.response?.data?.message || "Something went wrong!");
@@ -66,16 +66,14 @@ const Signup = () => {
       I already have an account!
       </Link>
 	  
-    <Link className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">  Forgot Password?</Link> 
+    
       
       
 	  </div>
 	
     </div>
   </form>
-  <p className="text-center text-gray-500 text-xs">
-    &copy; copy right Nima!
-  </p>
+
 </div>
 <h1 className="logo">DoneLoo</h1>
 </>

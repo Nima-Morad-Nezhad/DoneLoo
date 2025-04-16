@@ -62,16 +62,12 @@ const Login = () => {
 	  <Link to="/"className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">
       I don't have an account!
       </Link>
-      <Link className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" >
-        Forgot Password?
-      </Link>
+     
 	  </div>
 	
     </div>
   </form>
-  <p className="text-center text-light  text-xs">
-    &copy; copy right Nima!
-  </p>
+ 
   <h1 className="logo">DoneLoo</h1>
 </div>
 	</>

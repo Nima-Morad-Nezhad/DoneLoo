@@ -5,7 +5,7 @@ const express = require("express");
 router.post('/add', async (req, res) => {
     try {
       const task =await Task.create({  title: req.body.title,
-        description: req.body.description
+        description: req.body.description,
        });
 
 
