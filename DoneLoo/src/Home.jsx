@@ -105,8 +105,8 @@ const Home = () => {
 	
 	<div>
 	<div className="d-flex flex-wrap mt-3 justify-content-around">
-    <div className="task-todo-card bg-light">
-     <div> <h3>To-Do</h3></div>  
+    <div className="task-todo-card bg-light ">
+     <div > <h5>To-Do</h5></div>  
      {list.map((task) => (
             <div className="task-home" key={task._id}>
               {editableId === task._id ? (
@@ -177,12 +177,12 @@ const Home = () => {
           ))}
         </div>
     <div className="task-todo-card bg-light">
-     <div> <h3>In progress</h3></div>  
+     <div> <h5>In progress</h5></div>  
    
        
     </div>
     <div className="task-todo-card bg-light">
-     <div> <h3>Done</h3></div>  
+     <div> <h5>Done</h5></div>  
    
        
     </div>

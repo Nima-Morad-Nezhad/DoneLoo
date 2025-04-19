@@ -6,7 +6,7 @@ const express = require("express");
  const authMiddleware = require("../middleware/authMiddleware")
  //user registration
  
- router.post("/register", async(req,res)=>{
+ router.post("/register",async(req,res)=>{
     try {
         // const {username , email, password} =req.body;
         const saltRound = Number(process.env.ROUNDED_SALT);
@@ -22,7 +22,7 @@ const express = require("express");
 })
 
 //User login
-router.post("/login", async(req,res)=>{
+router.post("/login" ,async(req,res)=>{
     try {
         const {email, password} = req.body;
         const user = await User.findOne({email});
@@ -38,5 +38,13 @@ router.post("/login", async(req,res)=>{
     } catch (error) {
         res.status(500).json({error:"Login failed", error} );
     }
+    //Logout route
+    router.post("/logout", async (req, res) => {
+        const token = req.header("Authorization")?.split(" ")[1];
+        if (token) {
+            blacklist.add(token); 
+        }
+        res.status(200).json({ msg: "Logged out successfully" });
+    });
 })
 module.exports = router;

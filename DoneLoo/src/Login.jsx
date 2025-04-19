@@ -35,6 +35,7 @@ const Login = () => {
   };
   return ( 
 	<>
+   <h1 className="logo">DoneLoo</h1>
 	<div className="w-full max-w-xs">
   <form onSubmit={handleLogin} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
 	
@@ -68,7 +69,7 @@ const Login = () => {
     </div>
   </form>
  
-  <h1 className="logo">DoneLoo</h1>
+ 
 </div>
 	</>
 	) 

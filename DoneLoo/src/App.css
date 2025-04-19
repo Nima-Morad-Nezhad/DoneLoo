@@ -17,9 +17,9 @@ h1{
 
 }
 .logo{
-    position: fixed;
-   bottom: 90px;
-  left: 36%;
+    
+   text-align: center;
+
 }
 
 .w-full{
@@ -96,9 +96,9 @@ h1{
     background-color: oklch(44.4% 0.177 26.899);
     transition: 0.30s;
 }
-h3{
-    text-align: center;
-    background-color:  rgb(252, 252, 134);
+h5{
+   padding-left: 5px;
+    background-color:  rgb(59, 33, 75);
     padding-top: 7px;
     padding-bottom: 7px;
   color:  oklch(0.712 0.194 13.428);
@@ -106,19 +106,20 @@ h3{
     
 }
 .task-todo-card{
-  background-color: oklch(83.7% 0.128 66.29, opacity(0.1));
-    min-width: 300px;
-    border-radius: 4px;
+  background-color:  rgb(52, 12, 78);
+    min-width: 280px;
+    border-radius: 3px;
     padding: 7px 7px;
-    min-height: 200px;
-
+    min-height: 500px;
+  
 }
 
 .task-home{
-    background-color:  oklch(35.9% 0.144 278.697);
-    padding: 16px 7px 16px 7px;
-    font-size: large;
-    border-radius: 4px;
+    background-color:  rgb(59, 33, 75);
+    padding: 14px 7px 14px 7px;
+    font-size: medium;
+    border-radius: 3px;
+    margin-top: 7px
 }
 hr{
     color: white;
@@ -133,6 +134,7 @@ label{
     text-decoration: none;
 color: #ffffff;
 font-weight: bold;
+cursor: pointer;
 
 }
 .home-nav-main{
@@ -141,3 +143,9 @@ font-weight: bold;
     float: right;
 }
 
+.bg-light{
+    background-color:   rgb(59, 33, 75);
+}
+.text-info{
+    color:  oklch(0.712 0.194 13.428);
+}
