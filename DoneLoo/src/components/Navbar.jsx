@@ -7,35 +7,23 @@ function Navbar (){
     const navigate = useNavigate();
 
     const handleLogout = async () => {
-      try {
-        const token = localStorage.getItem("verifytoken"); // or sessionStorage
-  
-        if (!token) {
-          console.log("No token found.");
-          return;
-        }
-  
-        await axios.post(
-          "http://localhost:4000/users/logout", // Update URL if different
-          {},
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
-  
-        // Clear token and redirect
-        localStorage.removeItem("token");
-        navigate("/login");
-      } catch (error) {
-        console.error("Logout failed:", error);
+     try {
+      if(localStorage.getItem("authToken")){
+        localStorage.removeItem("authToken");
+       
       }
+     
+     } catch (error) {
+      console.error("Logout failed", error);
+     }
+  
     };
  
     return(<>
-    <nav className="home-nav-main"> 
-        <Link onClick={handleLogout} className="home-nav-link"> Logout</Link>
+    <nav className="home-nav-main d-flex bd-highlight mb-3"> 
+    <Link to="/"  className="home-nav-link p-2 bd-highlight"> Sign up</Link>
+    <Link to="/login" className="home-nav-link p-2 bd-highlight"> Login</Link>
+        <Link to="/login" onClick={handleLogout} className="home-nav-link ml-auto p-2 bd-highlight"> Logout</Link>
      </nav>
      <h1 className="nav-logo">DoneLoo</h1>
     </>)

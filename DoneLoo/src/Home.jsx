@@ -11,7 +11,7 @@ const Home = () => {
     const [newTitle, setNewTitle] = useState("");
     const [newDescription, setNewDescription] = useState("");
    useEffect(()=>{
-    axios.get("http://localhost:4000/tasks/get").then(result => {
+    axios.get("http://localhost:5000/tasks/get").then(result => {
         setList(result.data)
     }).catch(err => console.log(err))
    }, [])
@@ -34,10 +34,17 @@ const Home = () => {
         alert("All fields must be filled out.");
         return;
     }
-  axios.post("http://localhost:4000/tasks/add",{
-    title: newTitle,
-     description:newDescription,
-  }).then((res) => {
+  axios.post("http://localhost:5000/tasks/add",
+    {
+      title: newTitle,
+      description: newDescription
+    },
+    {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("authToken")}`
+      }
+    }
+  ).then((res) => {
     setList([...list, res.data]); 
     setNewTitle("");
     setNewDescription("");
@@ -51,7 +58,7 @@ const Home = () => {
         alert("All fields must be filled out.");
         return;
     }
-    axios.put("http://localhost:4000/tasks/update/" + id, editedData)  .then(() => {
+    axios.put("http://localhost:5000/tasks/update/" + id, editedData)  .then(() => {
       const updatedList = list.map((item) =>
         item._id === id ? { ...item, ...editedData } : item
       );
@@ -63,7 +70,7 @@ const Home = () => {
     .catch((err) => console.log(err));
 };
   const deleteTask =(id) => {
-    axios.delete("http://localhost:4000/tasks/delete/" + id).then(() => {
+    axios.delete("http://localhost:5000/tasks/delete/" + id).then(() => {
       const filteredList = list.filter((item) => item._id !== id);
       setList(filteredList);
     })

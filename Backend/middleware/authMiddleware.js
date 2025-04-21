@@ -1,19 +1,21 @@
 const jwt = require("jsonwebtoken");
-const blacklist = new Set();
+
  function verifyToken(req, res,next){
-     const header = req.header("Authorization");
+     const header = req.header["authorization"];
+     console.log("header",header)
      if(!header) return res.status(401).json({error: "Access denied"});
-     const token = header.split(" ")[1];
-     if (blacklist.has(token)) {
-      return res.status(401).json({ error: "Token has been logged out" });
-  }
+    
+
+     let token = header.split(" ")[1];
+    
      try {
         const decoded = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
         req.userId = decoded;
-        //req.userId = decoded.decoded_id
+      
    next();
      } catch (error) {
-        res.status(401).json({ msg: "Invalid or expired token" });
+        res.send({ msg: "Invalid or expired token",error });
+         console.log(error);
      }
    
 res.status(401).json({error: "Invalid token"})}

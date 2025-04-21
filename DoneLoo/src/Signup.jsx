@@ -13,7 +13,7 @@ const Signup = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("http://localhost:4000/users/register", {
+      const { data } = await axios.post("http://localhost:5000/users/register", {
         username,
         email,
         password,
@@ -30,7 +30,7 @@ const Signup = () => {
 <>
 
 
-
+<h1 className="logo">DoneLoo</h1>
 <div className="w-full max-w-xs">
   <form onSubmit={handleRegister} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
 	
@@ -75,7 +75,7 @@ const Signup = () => {
   </form>
 
 </div>
-<h1 className="logo">DoneLoo</h1>
+
 </>
 	) 
 
