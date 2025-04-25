@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 
  function verifyToken(req, res,next){
-     const header = req.header["authorization"];
+     const header = req.headers.authorization;
      console.log("header",header)
      if(!header) return res.status(401).json({error: "Access denied"});
     
@@ -10,13 +10,17 @@ const jwt = require("jsonwebtoken");
     
      try {
         const decoded = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
-        req.userId = decoded;
+        // req.userId = decoded;
+      req.user = decoded;
       
    next();
      } catch (error) {
         res.send({ msg: "Invalid or expired token",error });
          console.log(error);
+
      }
    
-res.status(401).json({error: "Invalid token"})}
+// res.status(401).json({error: "Invalid token"})
+}
+
 module.exports =  verifyToken;

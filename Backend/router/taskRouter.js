@@ -5,13 +5,13 @@ const express = require("express");
   const auth = require("../middleware/authMiddleware")
 // Create a task
 router.post('/add',auth ,async (req, res) => {
-  console.log("req.user",req.user.userId)
- let ownerId ={id : req.user.userId}
+  console.log("req.user",req.user)
+ let ownerId = req.user.payload.userId;
     try {
  
       const task =await Task.create({  title: req.body.title,
         description: req.body.description,
-        owner: ownerId.id});
+        owner: ownerId});
 
 
       res.status(201).json(task);
@@ -24,14 +24,12 @@ router.post('/add',auth ,async (req, res) => {
   // Get all tasks
 router.get('/get', auth ,async (req, res) => {
     try {
-      const ownerId = req.params.ownerId;
-      if(ownerId === req.user.userId){
+      const ownerId = req.user.payload.userId;
+     
         const tasks = await Task.find({owner: ownerId});
         res.send(tasks);
             
-      }else{
-       res.send({msg:"you are not authorized to get this task"})  
-      }
+     
      
     } catch (error) {
       res.status(500).json({msg:"you could not receive",error  });

@@ -18,9 +18,10 @@ const Signup = () => {
         email,
         password,
       });
-      localStorage.setItem("authToken", data.token);
-      navigate("/home");
-      console.log('registered successfully!')
+      // localStorage.setItem("authToken", data.token);
+    
+      alert('registered successfully!')
+      navigate("/login");
     } catch (err) {
       setError(err.response?.data?.message || "Something went wrong!");
       setTimeout(() => setError(""), 5000);
@@ -59,7 +60,7 @@ const Signup = () => {
       <p className="text-red-500 text-xs italic">Please choose a password.</p>
     </div>
     <div className="flex items-center justify-between">
-    <Link> <button  className="button-design bg-sky-500 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" onClick={handleRegister}>
+    <Link> <button  className="button-design bg-sky-500 hover:bg-sky-700  font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" onClick={handleRegister}>
         Sign up
       </button></Link> <div className="flex flex-col">
         <Link className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" to="/login">

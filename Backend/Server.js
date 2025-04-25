@@ -11,7 +11,7 @@ const protectedRouter = require("./router/protectedRouter");
 const taskRouter = require("./router/taskRouter");
 const verifyToken = require('./middleware/authMiddleware');
 app.use(cors({ origin: "http://localhost:5173", credentials: true }));
-app.use(verifyToken)
+// app.use(verifyToken)
 app.use(express.json());
 // app.use("/auth", authRoutes);
 app.use("/protected", protectedRouter);

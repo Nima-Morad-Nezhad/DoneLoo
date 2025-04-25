@@ -21,8 +21,7 @@ function Navbar (){
  
     return(<>
     <nav className="home-nav-main d-flex bd-highlight mb-3"> 
-    <Link to="/"  className="home-nav-link p-2 bd-highlight"> Sign up</Link>
-    <Link to="/login" className="home-nav-link p-2 bd-highlight"> Login</Link>
+   
         <Link to="/login" onClick={handleLogout} className="home-nav-link ml-auto p-2 bd-highlight"> Logout</Link>
      </nav>
      <h1 className="nav-logo">DoneLoo</h1>

@@ -11,7 +11,8 @@ const Home = () => {
     const [newTitle, setNewTitle] = useState("");
     const [newDescription, setNewDescription] = useState("");
    useEffect(()=>{
-    axios.get("http://localhost:5000/tasks/get").then(result => {
+    axios.get("http://localhost:5000/tasks/get", {headers:{Authorization:`Bearer ${localStorage.getItem("authToken")}`}}).then(result => {
+        console.log(result.data)
         setList(result.data)
     }).catch(err => console.log(err))
    }, [])
@@ -28,7 +29,7 @@ const Home = () => {
     }
    };
    const addTask =(e) =>{
-   
+   console.log(localStorage.getItem("authToken"));
     e.preventDefault();
     if(!newTitle || !newDescription){
         alert("All fields must be filled out.");
@@ -45,6 +46,7 @@ const Home = () => {
       }
     }
   ).then((res) => {
+    console.log(res.data);
     setList([...list, res.data]); 
     setNewTitle("");
     setNewDescription("");
@@ -80,11 +82,11 @@ const Home = () => {
 	return( 
 	<>
 	<Navbar/>
-  <form className="input-design row" onSubmit={addTask}>
+  <form className="design-form row" onSubmit={addTask}>
   <div className="input-design row d-flex ">
 	<div className="col">
 
-  <label className=" block mb-2 text-sm text-slate-600">
+  <label className=" label-design block mb-2 text-sm text-slate-600">
       Title
   </label>
   <input type="text" className="form-input-design w-full placeholder:text-slate-400 text-slate-700 text-sm  rounded-md px-3 py-2 transition duration-300 ease " placeholder="Type here..."
@@ -92,7 +94,7 @@ const Home = () => {
   onChange={(e) => setNewTitle(e.target.value)} />
 </div>
 <div  className="w-full ">
-  <label className="block mb-2 text-sm text-slate-600">
+  <label className=" label-design block mb-2 text-sm text-slate-600">
       Description
   </label>
   <input type="text" className="form-input-design w-full  placeholder:text-slate-400 text-slate-700 text-sm  rounded-md px-3 py-2 transition duration-300 ease   " placeholder="Type here..." 
@@ -110,11 +112,11 @@ const Home = () => {
 	</div>
   </form>
 	
-	<div>
+	<div className="column-design">
 	<div className="d-flex flex-wrap mt-3 justify-content-around">
     <div className="task-todo-card bg-light ">
      <div > <h5>To-Do</h5></div>  
-     {list.map((task) => (
+     {list && list.map((task) => (
             <div className="task-home" key={task._id}>
               {editableId === task._id ? (
                 <>
@@ -161,7 +163,7 @@ const Home = () => {
                       onClick={() => deleteTask(task._id)}
                     >
                    <svg   type="button"
-                      className=" bi bi-trash"
+                      className="bi bi-trash"
                       onClick={() => deleteTask(task._id)} xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
   <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
   <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>

@@ -8,14 +8,15 @@ body{
    background-position: center;
    background-attachment: fixed;
    height: 100vh;
-   width: 100vw;
+   width: 98vw;
  
 }
 h1{
-    color: oklch(0.712 0.194 13.428);
+    color: #de8c42;
     text-align: center;
  font-size: 100px;
 
+ text-shadow:  2px 2px 5px  #17bed8;
 }
 .logo{
     
@@ -27,25 +28,45 @@ h1{
     max-width: 600px;
     margin: auto;
 }
+.block{
+    font-size: 25px;
+    font-weight: bold;
+    text-shadow: 4px 4px 5px #de8c42;
+}
+.max-w-xs{
+    opacity: 0.3;
+    transition: 0.5s;
+}
+.max-w-xs:hover{
+    opacity: 1;
+    transition: 0.5s;
+   
+}
 .bg-white{
     padding: 10px 20px;
     margin-top: 30px;
+    opacity: 1;
+}
+.shadow:focus{
+    opacity: 1;
+    transition: 0.5s;
 }
 .head-align{
     text-align: center;
+    opacity: 1;
 }
 .button-design{
-    background-color: oklch(0.792 0.209 151.711);
+    background-color: #17bed8;
     border: none;
-    color: oklch(0.712 0.194 13.428);
+    color: #0e1e2c;
     transition: 0.30s;
 }
 .button-design:hover{
     transition: 0.30s;
-    background-color: oklch(0.627 0.194 149.214);
+    background-color: #087eac;
 }
 .button-design:active{
-    background-color: oklch(0.792 0.209 151.711);
+    background-color:  #055c7e;
     border: none;
     
     transition: 0.15s;
@@ -55,26 +76,37 @@ h1{
    margin-top: 50px;
    margin-bottom: 30px;
 }
-.input-design{
+
+.d-flex{
     display: flex;
     flex-direction: row;
-  justify-content: space-between;
-   flex-shrink: inherit;
-   padding-left: 20px;
-   padding-right: 20px;
-
+    justify-content: space-evenly;
+      
+padding-left: 20px;   
+padding-right: 20px;
 }
 .vertical{
     padding-top: 30px;
   
 }
 .form-input-design{
-    background-color: oklch(90.5% 0.182 98.111);
+    background-color:#087eac;
     border-style: none;
     border-radius: 4px;
     box-shadow: 2px 2px 5px;
     opacity: 0.2;
     transition: 0.5s;
+    box-shadow: 4px 4px 7px #de8c42;
+    max-width: 600px;
+}
+.design-form{
+  
+    opacity: 1;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.form-input-design::placeholder{
+    color: #de8c42;
 }
 .form-input-design:focus{
     transition: 0.5s;
@@ -82,32 +114,32 @@ h1{
 }
 .button-design-home{
     border: none;
-    background-color: oklch(70.4% 0.191 22.216);
-    color: white;
+    background-color: #17bed8;
+    color: #0e1e2c;
     border-radius: 4px;
     padding: 9px 25px ;
-    box-shadow: 2px 2px 5px black;
+    box-shadow: 2px 2px 5px #de8c42;
     transition: 0.30s;
 }
 .button-design-home:hover{
-    background-color: oklch(57.7% 0.245 27.325);
+    background-color:#087eac;
     transition: 0.30s;
 }
 .button-design-home:active{
-    background-color: oklch(44.4% 0.177 26.899);
+    background-color: #055c7e;
     transition: 0.30s;
 }
 h5{
    padding-left: 5px;
-    background-color:  rgb(59, 33, 75);
+    background-color: #0e1e2c;
     padding-top: 7px;
     padding-bottom: 7px;
-  color:  oklch(0.712 0.194 13.428);
+  color:  #de8c42;
     border-radius: 4px;
     
 }
 .task-todo-card{
-  background-color:  rgb(52, 12, 78);
+  background-color: #0e1e2c;
     min-width: 280px;
     border-radius: 3px;
     padding: 7px 7px;
@@ -116,7 +148,7 @@ h5{
 }
 
 .task-home{
-    background-color:  rgb(59, 33, 75);
+    background-color:  #0e1e2c;
     padding: 14px 7px 14px 7px;
     font-size: medium;
     border-radius: 3px;
@@ -128,12 +160,10 @@ hr{
 span{
     color: white;
 }
-label{
-    color: #ffffff;
-}
+
 .home-nav-link{
     text-decoration: none;
-color: #ffffff;
+    color: #de8c42;
 font-weight: bold;
 cursor: pointer;
 
@@ -141,12 +171,39 @@ cursor: pointer;
 .home-nav-main{
     
    font-size: 15px;
+   background-color: #ffffff;
+    padding: 10px 20px;
+   width: 100%;
+     box-shadow: 2px 2px 5px #de8c42;
+  position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  
 
 }
 
 .bg-light{
-    background-color:   rgb(59, 33, 75);
+    background-color:   #0e1e2c;
 }
 .text-info{
     color:  oklch(0.712 0.194 13.428);
+}
+.inline-block{
+    color:  #de8c42;
+    transition: 0.5s;
+}
+.inline-block:hover{
+    color: #b95c0b;
+    transition: 0.5s;
+}
+.column-design{
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 15px;
+}
+.label-design{
+    color: white
+   
 }

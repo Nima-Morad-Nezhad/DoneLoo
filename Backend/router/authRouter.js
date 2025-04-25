@@ -37,11 +37,12 @@ router.post("/login" ,async(req,res)=>{
         }
         const user = await User.findOne({email});
         if(!user){
-            return res.send({error: "Authentication failed"} )
+            return res.send({error: "Authentication failed, user not found please register first"} )
+
         }
         const passwordMatch = await bcrypt.compare(password, user.password);
         if(!passwordMatch){
-            return res.send({error: "Authentication failed!"} );
+            return res.send({error: "Authentication failed!, invalid password"} );
         }
         let payload ={
             userId: user._id,
